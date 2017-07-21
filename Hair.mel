@@ -1,15 +1,14 @@
-float $radius = 7;
+float $radius = 5;
 
 for($x = 0; $x < 360; $x++)
 {
     select pfxHair1;
-    rotate -y 0;
     move -x 0 -z 0;
     
-    float $moveX = $radius + cos(deg_to_rad($x));
-    float $moveZ = $radius + sin(deg_to_rad($x));
+    float $moveX = $radius * cos(deg_to_rad($x));
+    float $moveZ = $radius * sin(deg_to_rad($x)) + 5;
     
-    float $rotationY = deg_to_rad($x);
+    float $rotationY = -$x + 90;
     
     rotate -y $rotationY;
     move -x $moveX -z $moveZ;
