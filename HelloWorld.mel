@@ -1,3 +1,8 @@
+//実行するとHello，World!といってくれます
+//ボタンを押しても何も起こりません
+
 confirmDialog -title "Maya" -message "Hello, World!"
     -button "Hello!" -button "Nice to meet you!" 
-    -defaultButton "Hello!" -cancelButton "Nice to meet you!" -dismissString "Nice to meet you!";
+    -defaultButton "Hello!" -cancelButton "Nice to meet you!" -dismissString "Nice to meet you!"
+
+//正しい使い方は、「○○しますか」に対して、「Yes」または「No」ボタンというような確認が目的になると思います
