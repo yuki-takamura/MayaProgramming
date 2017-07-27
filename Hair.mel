@@ -2,32 +2,29 @@
 //pfxHair1を任意のオブジェクト名に変えると、そのオブジェクトを円状に配置出来ると思います
 //yの値は変更されないため、あらかじめ決定しておくかスクリプトを書き換える必要があります
 
-//これを追記することで、Hairというコマンドで｛｝の中が実行できるようになります
-global proc Hair() //ファイル名とここの名前は同じにする必要があります
-{
-    //半径（中心から髪を生やす位置までの距離）
-    float $radius = 5;
+//半径（中心から髪を生やす位置までの距離）
+float $radius = 5;
 
-    //一周するまで複製を繰り返します
-    for($x = 0; $x < 360; $x++)
-    {
-        //複製するものを選択
-        select pfxHair1;
+//一周するまで複製を繰り返します
+for($x = 0; $x < 360; $x++)
+{
+    //複製するものを選択
+    select pfxHair1;
     
-        move -x 0 -z 0;
+    move -x 0 -z 0;
     
-        //あらかじめ回転と移動を計算
-        float $rotationY = -$x + 90; //複製したオブジェクトの向きがおかしい場合は、ここの行を書き換えます
-        float $moveX = $radius * cos(deg_to_rad($x));
-        float $moveZ = $radius * sin(deg_to_rad($x));
+    //あらかじめ回転と移動を計算
+    float $rotationY = -$x + 90; //複製したオブジェクトの向きがおかしい場合は、ここの行を書き換えます
+    float $moveX = $radius * cos(deg_to_rad($x));
+    float $moveZ = $radius * sin(deg_to_rad($x));
     
-        //複製するものを回転し、移動
-        rotate -y $rotationY;
-        move -x $moveX -z $moveZ;
+    //複製するものを回転し、移動
+    rotate -y $rotationY;
+    move -x $moveX -z $moveZ;
     
-        //回転と移動をしたものを複製
-        duplicate pfxHair1;
-    };
-}
+    //回転と移動をしたものを複製
+    duplicate pfxHair1;
+    
+ };
 
 //こんな感じ？で複製したら、後は手作業でいい感じに仕上げていくのではないかと思います
