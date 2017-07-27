@@ -1,0 +1,3 @@
+confirmDialog -title "Maya" -message "Hello, World!"
+    -button "Hello!" -button "Nice to meet you!" 
+    -defaultButton "Hello!" -cancelButton "Nice to meet you!" -dismissString "Nice to meet you!";
